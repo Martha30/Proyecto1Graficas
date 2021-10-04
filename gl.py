@@ -8,6 +8,13 @@ import math
 from random import randint as random
 from random import uniform as randomDec
 from obj import ObjReader
+import numpy as np 
+from collections import namedtuple
+
+
+V2 = namedtuple('Point2', ['x', 'y'])
+V3 = namedtuple('Point3', ['x', 'y', 'z'])
+V4 = namedtuple('Point4', ['x', 'y', 'z', 'w'])
 
 def word(w):
   # 2 byte
@@ -249,18 +256,7 @@ def loadModelMatrix(self, translate=(0,0,0),scale=(1,1,1),rotate=(0,0,0)):
             [0,0,0,1]
         ]
 
-        primera = multMatrices(rotation_matrix_z,rotation_matrix_y)
-        rotation_matrix = multMatrices(primera,rotation_matrix_x)
         
-        segunda = multMatrices(rotation_matrix,scale_matrix)
-        self.Model = multMatrices(translate_matrix,segunda)
-
-def lookAt(self, eye, center, up):
-     z = norm(sub(eye, center))
-     x = norm(cross(up,z))
-     y = norm(cross(z,x))
-     self.loadViewMatrix(x, y, z, center)
-     self.loadProyectionMatrix(1/magnitud(sub(eye,center)))
 
 def loadViewMatrix(self, x, y, z, center):
         M = [
@@ -306,9 +302,7 @@ def glLoadTexture(self, file_name, translate=(0, 0), scale=(1, 1)):
                 tv2 = face[1][1] - 1
                 tv3 = face[2][1] - 1
                 
-                tvAx, tvAy = tvA.x,tvA.y
-                tvBx, tvBy = tvB.x,tvB.y
-                tvCx, tvCy = tvC.x,tvC.y
+                
                 
                 tvAx = (tvAx * 2) - 1
                 tvAy = (tvAy * 2) - 1
