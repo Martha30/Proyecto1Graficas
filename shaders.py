@@ -83,28 +83,28 @@ r.draw_arrays('TRIANGLES')
 r.current_texture = gourad
 r.light = V3(-0.3, -0.3, 0.4)
 #Lentes
-r.load('./models/Glasses.obj', (-0.3, 0.2, 0), (0.05, 0.2, 0.05), (0, pi/3, 0))
+r.load('./models/Glasses.obj', (-0.3, 0.15, 0), (0.08, 0.2, 0.05), (0, pi/3, 0))
 r.active_shader = shader2
 r.draw_arrays('TRIANGLES')
 
 r.current_texture = gourad
 r.light = V3(-0.3, -0.3, 0.4)
 #Lata 
-r.load('./models/Can.obj', (-0.6, 0.2, 0), (0.08, 0.2, 0.05), (0, pi/3, 0))
+r.load('./models/Can.obj', (-0.6, 0.01, 0), (0.08, 0.2, 0.05), (0, pi/3, 0))
 r.active_shader = shader3
 r.draw_arrays('TRIANGLES')
 
 r.current_texture = gourad
 r.light = V3(-0.3, -0.3, 0.4)
 #plantita
-r.load('./models/SUCCULENT.obj', (0.7, -0.4, 0), (0.25, 0.6, 0.1), (0, -pi/4, 0))
+r.load('./models/SUCCULENT.obj', (-0.4, -0.5, 0), (0.09, 0.2, 0.05), (0, pi/3, 0))
 r.active_shader = shader4
 r.draw_arrays('TRIANGLES')
 
 r.current_texture = gourad
 r.light = V3(-0.3, -0.3, 0.4)
 #Libro
-r.load('./models/Quran.obj', (0.5, 0.2, 0), (0.05, 0.2, 0.05), (0, pi/3, 0))
+r.load('./models/Quran.obj', (-0.2, -0.5, 0), (0.09, 0.2, 0.05), (0, pi/4, 0))
 r.active_shader = shader5
 r.draw_arrays('TRIANGLES')
 r.render()
